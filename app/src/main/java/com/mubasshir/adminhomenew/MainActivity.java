@@ -3,6 +3,8 @@ package com.mubasshir.adminhomenew;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Profile_fragment profileFragment;
     private BookingFragment bookingFragment;
     private int selectedFragmentID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

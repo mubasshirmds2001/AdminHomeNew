@@ -8,12 +8,13 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="50dp"
-    android:padding="10dp">
+    android:padding="10dp"
+    >
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
+        >
 
         <TableRow
             android:layout_width="match_parent"
@@ -125,6 +126,59 @@
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="@string/City"
+                android:textColor="#0F1051"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                tools:ignore="MissingConstraints">
+
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="10"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/amountin"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_bg"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Income"
+                android:textColor="#0F1051"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:layout_weight="20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                tools:ignore="MissingConstraints"/>
+
+            <EditText
+                android:id="@+id/amountout"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_bg"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Expense"
+                android:layout_weight="1"
                 android:textColor="#0F1051"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
