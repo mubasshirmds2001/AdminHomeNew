@@ -8,18 +8,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
@@ -28,10 +34,14 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
+    private FirebaseDatabase firebaseDatabase;
     private Home_Fragment homeFragment;
     private Profile_fragment profileFragment;
     private BookingFragment bookingFragment;
     private int selectedFragmentID;
+    private String pname,paddress,pcity,amtin,amtout;
+    private DatabaseReference databaseProjects;
+    private String projectID = "";
 
 
     @Override
@@ -70,7 +80,47 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        saveData();
 
+    }
+
+    private void saveData() {
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        databaseProjects = FirebaseDatabase.getInstance().getReference("Projects");
+        Log.d("logInfo", databaseProjects.toString());
+        if (user != null){
+            projectID = user.getUid();
+        }
+
+//        databaseProjects.child(projectID).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                Projects projectInfo = snapshot.getValue(Projects.class);
+//
+//                if (projectInfo != null){
+//                    pname = projectInfo.name;
+//                    paddress = projectInfo.address;
+//                    pcity = projectInfo.city;
+//                    amtin = projectInfo.amountin;
+//                    amtout = projectInfo.amountout;
+//
+//
+//                    SharedPreferences.Editor editor = getSharedPreferences("userInfo", MODE_PRIVATE).edit();
+//                    editor.putString("ProjectName", pname);
+//                    editor.putString("ProjectAddress", paddress);
+//                    editor.putString("ProjectCity", pcity);
+//                    editor.putString("AmountIn", amtin);
+//                    editor.putString("AmountOut", amtout);
+//                    editor.apply();
+//                }
+//
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     private void loadDefaultFragment() {

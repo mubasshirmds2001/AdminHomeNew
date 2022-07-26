@@ -62,7 +62,7 @@
             android:gravity="center">
 
             <EditText
-                android:id="@+id/p_name"
+                android:id="@+id/edp_name"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_bg"
@@ -90,7 +90,7 @@
             android:gravity="center">
 
             <EditText
-                android:id="@+id/p_address"
+                android:id="@+id/edp_address"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_bg"
@@ -119,7 +119,7 @@
             android:gravity="center">
 
             <EditText
-                android:id="@+id/p_city"
+                android:id="@+id/edp_city"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_bg"
@@ -150,7 +150,7 @@
             android:gravity="center">
 
             <EditText
-                android:id="@+id/amountin"
+                android:id="@+id/edamountin"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_bg"
@@ -171,7 +171,7 @@
                 tools:ignore="MissingConstraints"/>
 
             <EditText
-                android:id="@+id/amountout"
+                android:id="@+id/edamountout"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_bg"
